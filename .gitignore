@@ -1,0 +1,12 @@
+# Ignore dotnet shenanigans
+obj
+
+# Ignore npm shenanigans
+node_modules
+
+# Ignore built files
+Assemblies
+*.xml
+
+# Ignore editor files
+.vscode
