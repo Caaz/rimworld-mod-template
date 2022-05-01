@@ -7,18 +7,13 @@ As a rimworld modder, I'd like to be able to get up and running with as little b
 
 ## Features
 
-- [x] Reasonable gitignore (Manually created, with love.)
-- [x] Made for developing in VSCode (While possible to use with visual studio, it's more hurdles than it's worth)
-- [x] Uses kraf's reference assemblies.
-- [x] Includes (but doesn't require) hugslib.
-- [ ] Github action for building the mod!
-- [x] Uses NPM scripts for auto building locally.
-- [x] A single location to modify mod metadata.
-- [x] A checklist for starting out
-
-## Building
-
-`npm run build` is the preferred way to build the project. Which will run `dotnet build` as well as build the pug packages.
+- Reasonable gitignore
+- Made for VSCode
+- Uses `Krafs.Rimworld.Ref` for Rimworld's Reference Assemblies
+- Includes (but doesn't require) Hugslib and Harmony.
+- Has a Github action for building the mod on the main branch.
+- Has a `metadata.json` for including variables that get used in pug, gitlab actions, and the csproj file.
+- Has a bit of a [Getting Started](#getting-started) section!
 
 ## Getting Started
 
@@ -62,3 +57,7 @@ These variables are currently being used by the mod template's pug files.
   - The namespace your C# code will use. Used in `csproj.pug`, and [should be used in your code](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/types/namespaces). eg. `MyMod`
 - `assemblyName`
   - The assembly output name. It's the filename of the `.dll` the C# builds to. And here, it's also used for the filename of the `.csproj`. eg. `MyMod`
+
+## Building the Mod
+
+`npm run build` will build the pug, and then build the DLL file. It's that simple!
