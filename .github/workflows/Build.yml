@@ -1,0 +1,33 @@
+﻿name: Build
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+    - uses: actions/checkout@v2
+    - name: Read Metadata
+      uses: antifree/json-to-variables@v1.0.1
+      with:
+        filename: 'metadata.json'
+        prefix: metadata
+    - run: npm install
+    - run: npm run build
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.metadata_name }}
+        path: |
+          About
+          Assemblies
+          Defs
+          Patches
+          Textures
+          Sounds
+          News
+          *.md
