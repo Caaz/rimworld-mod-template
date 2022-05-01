@@ -12,9 +12,10 @@ fs.readdir('Pug', (err, files) => {
             let xmlName = name + "/" + name + ".xml"
             if(name == "csproj")
                 xmlName = data.assemblyName + ".csproj"
+            else
+                fs.mkdir(name, (err) => { })
             console.log("Rendering " + name)
             renderer = pug.compileFile("Pug/" + file, {pretty: true})
-            fs.mkdir(name, (err) => {})
             fs.writeFile(xmlName, renderer(data), basicError)
         }
     });

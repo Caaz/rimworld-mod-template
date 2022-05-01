@@ -12,8 +12,8 @@ As a rimworld modder, I'd like to be able to get up and running with as little b
 - [x] Uses kraf's reference assemblies.
 - [x] Includes (but doesn't require) hugslib.
 - [ ] Github action for building the mod!
-- [ ] Uses NPM scripts for auto building locally.
-- [ ] A single location to modify mod metadata.
+- [x] Uses NPM scripts for auto building locally.
+- [x] A single location to modify mod metadata.
 - [ ] A checklist for starting out
 
 ## Building
