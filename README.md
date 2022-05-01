@@ -14,6 +14,7 @@ As a rimworld modder, I'd like to be able to get up and running with as little b
 - [ ] Github action for building the mod!
 - [ ] Uses NPM scripts for auto building locally.
 - [ ] A single location to modify mod metadata.
+- [ ] A checklist for starting out
 
 ## Building
 
