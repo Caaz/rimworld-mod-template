@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A template for rimworld mods.",
   "scripts": {
-    "build": "npm run buildsource && npm run buildpug",
+    "build": "npm run buildpug && npm run buildsource",
     "buildsource": "dotnet build",
     "buildpug": "node build.js"
   },

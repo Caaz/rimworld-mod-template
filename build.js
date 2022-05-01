@@ -1,7 +1,6 @@
 const fs = require('fs')
 const pug = require('pug')
 var data = require('./metadata.json')
-data.pretty = true
 function basicError(err) {
     if (err) console.error(err)
 }
@@ -14,9 +13,9 @@ fs.readdir('Pug', (err, files) => {
             if(name == "csproj")
                 xmlName = data.assemblyName + ".csproj"
             console.log("Rendering " + name)
-            let rendered = pug.renderFile("Pug/" + file, data, pretty=true)
+            renderer = pug.compileFile("Pug/" + file, {pretty: true})
             fs.mkdir(name, (err) => {})
-            fs.writeFile(xmlName, rendered, basicError)
+            fs.writeFile(xmlName, renderer(data), basicError)
         }
     });
 });
