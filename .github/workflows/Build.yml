@@ -22,7 +22,7 @@ jobs:
     - run: npm run buildsource
     - uses: actions/upload-artifact@v2
       with:
-        name: ${{ env.metadata_name }}
+        name: ${{ env.metadata_default_name }}
         path: |
           About
           Assemblies

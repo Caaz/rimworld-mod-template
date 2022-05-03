@@ -51,6 +51,7 @@ These variables are currently being used by the mod template's pug files.
 
 - `name`
   - The name of the mod, used in `About.pug`. eg. ``My Cool Mod`
+  - The build github action always uses the name found in `default`, so be aware of that.
 - `author`
   - A comma seperated list of authors that have worked on the mod. Used in `About.pug`. eg. `Me, Myself, and I`
 - `description`
