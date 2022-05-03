@@ -1,9 +1,16 @@
 {
-    "name": "Mod Template",
-    "author": "ReplaceThisWithYou",
-    "desription": "A modding template, you should replace this with your description!",
-    "version": "1.0.0.0",
-    "packageId": "my.mod.template",
-    "namespace": "MyMod",
-    "assemblyName": "MyMod"
+    "default": {
+        "name": "Mod Template",
+        "author": "ReplaceThisWithYou",
+        "desription": "A modding template, you should replace this with your description!",
+        "version": "1.0.0.0",
+        "packageId": "my.mod.template",
+        "namespace": "MyMod",
+        "assemblyName": "MyMod"
+    },
+    "dev": {
+        "name": "Mod Template DEVELOPMENT MODE",
+        "description": "Mod Template Development mode example!",
+        "packageId": "my.mod.template.dev"
+    }
 }

@@ -18,7 +18,8 @@ jobs:
         filename: 'metadata.json'
         prefix: metadata
     - run: npm install
-    - run: npm run build
+    - run: npm run buildpug production
+    - run: npm run buildsource
     - uses: actions/upload-artifact@v2
       with:
         name: ${{ env.metadata_name }}
