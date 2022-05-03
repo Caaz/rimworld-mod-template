@@ -25,6 +25,12 @@ So, you want to mod like Caaz?
 1. Edit your `metadata.json`! That holds all the relevant information for your mod, in one spot! This includes the name of the project, the version, author data. Things you might expect in `About.xml`, but since they're variables, you can use them in other areas of the pug templates. See [the metadata section](#Metadata) for more details.
 
 ## Metadata
+
+### Environments
+`metadata.json` Allows you to define environment variables depending on how you build. This allows you to built the project in development mode, with some variables tweaked.
+
+### Reasoning
+
 One of my personal pain points in modding has been wanting a single place to hold information for the mod. For example, if you wanted to put features behind some defs behind feature flags, you could do something like...
 ```pug
 if featureFlag
