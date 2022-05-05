@@ -2,7 +2,7 @@
     "default": {
         "name": "Mod Template",
         "author": "ReplaceThisWithYou",
-        "desription": "A modding template, you should replace this with your description!",
+        "description": "A modding template, you should replace this with your description!",
         "version": "1.0.0.0",
         "packageId": "my.mod.template",
         "namespace": "MyMod",
