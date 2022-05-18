@@ -1,0 +1,3 @@
+[submodule "Pug/Mixins"]
+	path = Pug/Mixins
+	url = git@github.com:Caaz/rimworld-pug-mixins.git

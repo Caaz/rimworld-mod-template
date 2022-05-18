@@ -12,6 +12,8 @@ jobs:
     runs-on: windows-2019
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: true
     - name: Read Metadata
       uses: antifree/json-to-variables@v1.0.1
       with:
