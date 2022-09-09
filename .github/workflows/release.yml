@@ -25,7 +25,7 @@ jobs:
         echo "repo_folder=$(ls)" >> $GITHUB_ENV
     - name: steam-workshop-upload
       if: env.workshop_id
-      uses: weilbyte/steam-workshop-upload@v1
+      uses: weilbyte/steam-workshop-upload@v1.0
       with: 
         appid: 294100 # Rimworld's Steam App ID
         itemid: ${{env.workshop_id}} # Your mod's Steam Workshop ID
