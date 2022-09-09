@@ -11,18 +11,13 @@ on:
 jobs:
   build:
     uses: ./.github/workflows/build.yml
-  upload:
+  release:
     needs: build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/download-artifact@v3
       with:
         name: Mod
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: "**"
-        prerelease: true
     - name: Set Environment Variables
       run: |
         echo "workshop_id=$(cat About/PublishedFileId.txt)" >> $GITHUB_ENV
@@ -39,3 +34,17 @@ jobs:
         STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }} # Your Steam username
         STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }} # Your Steam password
         STEAM_TFASEED: ${{ secrets.STEAM_TFASEED }} # Your Steam Guard 2FA shared secret (Optional)
+    - name: Package folder
+      uses: montudor/action-zip@v0.1.0
+      with:
+        args: zip -qq -r ${{env.repo_folder}}.zip ${{env.repo_folder}}
+    - name: Upload to release
+      if: env.GITHUB_EVENT_NAME == 'release'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ${{env.repo_folder}}.zip
+        asset_name: ${{env.repo_folder}}.zip
+        asset_content_type: application/zip
