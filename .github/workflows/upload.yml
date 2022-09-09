@@ -16,6 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-      echo '::echo::on'
-      cd ..
-      ls
+        echo '::echo::on'
+        cd ..
+        ls
