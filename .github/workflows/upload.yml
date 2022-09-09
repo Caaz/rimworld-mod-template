@@ -16,4 +16,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: cd ..
-    - run: ls
+    - run: echo $(ls)
