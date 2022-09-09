@@ -35,6 +35,8 @@ jobs:
         STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }} # Your Steam password
         STEAM_TFASEED: ${{ secrets.STEAM_TFASEED }} # Your Steam Guard 2FA shared secret (Optional)
     - run: |
+        echo '::echo::on'
+        ls
         7z a ${{env.repo_folder}}.zip ${{env.repo_folder}}
     - name: Create Github Release
       uses: Hs1r1us/Release-AIO@v1.0
