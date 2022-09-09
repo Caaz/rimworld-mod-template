@@ -17,5 +17,7 @@ jobs:
     steps:
     - run: |
         echo '::echo::on'
-        cd ..
+        mkdir dist
+        mv About Assemblies Defs Languages Patches Sounds Textures README.md LICENSE.md dist
         ls
+        ls dist
