@@ -37,7 +37,7 @@ jobs:
     - name: Package folder
       uses: montudor/action-zip@v0.1.0
       with:
-        args: zip -qq -r ${{env.repo_folder}}.zip ${{env.repo_folder}}
+        args: zip -qq -r ${{env.repo_folder}}.zip *
     - name: Upload to release
       if: env.GITHUB_EVENT_NAME == 'release'
       uses: actions/upload-release-asset@v1
