@@ -22,7 +22,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: "**"
-      prerelease: true
+        prerelease: true
     - name: Set Environment Variables
       run: |
         echo "workshop_id=$(cat About/PublishedFileId.txt)" >> $GITHUB_ENV
