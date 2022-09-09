@@ -15,10 +15,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/download-artifact@v3
+      with:
+        name: mod
     - run: |
         echo '::echo::on'
         ls
-        mkdir dist
-        mv About Assemblies Defs Languages Patches Sounds Textures README.md LICENSE.md dist
-        ls
-        ls dist
