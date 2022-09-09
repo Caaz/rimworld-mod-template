@@ -22,15 +22,15 @@ jobs:
     - run: npm install
     - run: npm run buildpug production
     - run: npm run buildsource
-    - uses: actions/upload-artifact@v2
-      with:
-        name: ${{ env.metadata_default_name }}
-        path: |
-          About
-          Assemblies
-          Defs
-          Patches
-          Textures
-          Sounds
-          News
-          *.md
+    # - uses: actions/upload-artifact@v2
+    #   with:
+    #     name: ${{ env.metadata_default_name }}
+    #     path: |
+    #       About
+    #       Assemblies
+    #       Defs
+    #       Patches
+    #       Textures
+    #       Sounds
+    #       News
+    #       *.md

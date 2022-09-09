@@ -1,0 +1,16 @@
+name: Upload
+
+on:
+  release:
+    types: [published, prereleased]
+
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+  upload:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - run: cd ..
+    - run: ls
