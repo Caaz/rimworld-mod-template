@@ -1,12 +1,9 @@
-name: Upload
+name: Automated Release
 
 on:
   workflow_dispatch: {}
-  release:
-    types: [published, prereleased]
-  pull_request:
+  push:
     branches: [ main ]
-
 
 jobs:
   build:
