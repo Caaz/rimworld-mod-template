@@ -7,6 +7,8 @@ As a rimworld modder, I'd like to be able to get up and running with as little b
 
 ## Features
 
+- Automatic uploading to Steam Workshop, and creating of github releases!
+- automatic building of the mod for pull requests, to ensure code works before it gets released.
 - Reasonable gitignore
 - Made for VSCode
 - Uses `Krafs.Rimworld.Ref` for Rimworld's Reference Assemblies
