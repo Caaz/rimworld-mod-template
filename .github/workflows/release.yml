@@ -21,8 +21,8 @@ jobs:
       run: |
         echo '::echo::on'
         echo "workshop_id=$(cat About/PublishedFileId.txt)" >> $GITHUB_ENV
-        cd ..
         ls
+        cd ..
         echo "repo_folder=$(ls)" >> $GITHUB_ENV
     - name: steam-workshop-upload
       if: env.workshop_id
