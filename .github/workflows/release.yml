@@ -25,7 +25,7 @@ jobs:
       run: |
         echo '::echo::on'
         mkdir ${{ env.mod_name }}
-        mv ^${{ env.mod_name }} ${{ env.mod_name }}
+        mv `ls -I ${{ env.mod_name }}` ${{ env.mod_name }}
         7z a ${{ env.mod_name }}.zip ${{ env.mod_name }}
         ls
     - name: steam-workshop-upload
