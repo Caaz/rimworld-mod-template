@@ -3,10 +3,14 @@
         "name": "Mod Template",
         "author": "ReplaceThisWithYou",
         "description": "A modding template, you should replace this with your description!",
-        "version": "1.0.0.0",
+        "version": "1.4.0.0",
         "packageId": "my.mod.template",
         "namespace": "MyMod",
-        "assemblyName": "MyMod"
+        "assemblyName": "MyMod",
+        "supportedVersions": [1.4],
+        "modDependencies": [
+            {"packageId": "UnlimitedHugs.HugsLib", "displayName": "HugsLib", "steamWorkshopUrl": "steam://url/CommunityFilePage/818773962"}
+        ]
     },
     "dev": {
         "name": "Mod Template DEVELOPMENT MODE",
