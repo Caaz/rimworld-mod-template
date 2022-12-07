@@ -1,0 +1,4 @@
+include Mixins/Mixins.pug
+loadFolders
+  each folders, version in loadFolders
+    +Array(version, folders)
