@@ -7,10 +7,16 @@
         "packageId": "my.mod.template",
         "namespace": "MyMod",
         "assemblyName": "MyMod",
+        "assemblyFolder": "1.4/Assemblies",
+        "loadAfter": ["UnlimitedHugs.HugsLib"],
         "supportedVersions": [1.4],
         "modDependencies": [
             {"packageId": "UnlimitedHugs.HugsLib", "displayName": "HugsLib", "steamWorkshopUrl": "steam://url/CommunityFilePage/818773962"}
-        ]
+        ],
+        "loadFolders": {
+            "1.3": ["1.3"],
+            "1.4": ["1.4", "/"]
+        }
     },
     "dev": {
         "name": "Mod Template DEVELOPMENT MODE",
