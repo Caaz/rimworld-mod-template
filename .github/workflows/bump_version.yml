@@ -30,5 +30,4 @@ jobs:
       - name: Commit and push
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Bump version to $new_version
-          push_options: '--force'
+          commit_message: Bump version to ${{ env.new_version }}
