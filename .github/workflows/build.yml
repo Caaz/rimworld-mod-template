@@ -26,6 +26,7 @@ jobs:
           1.5
           1.6
           metadata.json
+          loadFolders.xml
           About
           Assemblies
           Defs
