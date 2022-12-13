@@ -5,7 +5,10 @@ on:
   workflow_dispatch: {}
 
 jobs:
+  bump_version:
+    uses: ./.github/workflows/bump_version.yml
   build:
+    needs: bump_version
     uses: ./.github/workflows/build.yml
   release:
     needs: build
