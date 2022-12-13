@@ -1,0 +1,37 @@
+name: Bump version
+
+on:
+  workflow_call: {}
+  workflow_dispatch: {}
+  pull_request:
+    types: [closed]
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - uses: actions/checkout@v2
+
+      # Bump the version in the JSON file
+      - name: Bump version
+        run: |
+          # Read the current version from the JSON file
+          version=$(cat metadata.json | jq -r '.default.version')
+
+          # Increment the fourth version number
+          new_version=$(echo $version | awk -F. -v OFS=. '{$NF=$(NF+1); print}')
+
+          # Update the JSON file with the new version
+          jq -r --arg new_version "$new_version" '.default.version = $new_version' metadata.json > metadata.json.tmp
+          mv metadata.json.tmp metadata.json
+
+      # Commit and push the changes
+      - name: Commit and push
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          author_name: Daniel Caaz
+          author_email: dcaazy@gmail.com
+          message: Bump version to $new_version
+          branch: main
