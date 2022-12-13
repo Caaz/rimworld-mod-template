@@ -1,5 +1,3 @@
 include Mixins/Generic.pug
 loadFolders
-  each folders, version in loadFolders
-    #{"v"+version}
-      +List(folders)
+  +Object(loadFolders)

@@ -15,17 +15,16 @@ jobs:
       - uses: actions/checkout@v2
 
       # Bump the version in the JSON file
-      - name: Bump Version
+      - name: Increment version number
         run: |
-          # Read the current version from the JSON file
+          # Pull version number from metadata.json file
           version=$(cat metadata.json | jq -r '.default.version')
 
-          # Increment the fourth version number
-          new_version=$(echo $version | awk -F. -v OFS=. '{$NF=$(NF+1); print}')
+          # Increment fourth version number
+          new_version=$(echo "${version}" | awk -F'.' -v OFS='.' '{$4+=1;print}')
 
-          # Update the JSON file with the new version
-          jq -r --arg new_version "$new_version" '.default.version = $new_version' metadata.json > metadata.json.tmp
-          mv metadata.json.tmp metadata.json
+          # Update metadata.json file with new version number
+          jq '.default.version = "${new_version}"' metadata.json > metadata.json.tmp && mv metadata.json.tmp metadata.json
 
       # Commit and push the changes
       - name: Commit and push
