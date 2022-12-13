@@ -1,6 +1,6 @@
 {
   "name": "rimworld-mod-template",
-  "version": "1.0.0",
+  "version": "1.0.0.0",
   "description": "A template for rimworld mods.",
   "type": "module",
   "scripts": {
