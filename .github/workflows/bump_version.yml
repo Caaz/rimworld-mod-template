@@ -24,7 +24,7 @@ jobs:
           new_version=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
           
           # Update metadata.json file with new version number
-          jq '.default.version = "$new_version"' metadata.json > metadata.json.tmp && mv metadata.json.tmp metadata.json
+          jq ".default.version = \"${new_version}\"" metadata.json > metadata.json.tmp && mv metadata.json.tmp metadata.json
 
       # Commit and push the changes
       - name: Commit and push
